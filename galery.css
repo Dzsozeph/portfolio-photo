@@ -1,0 +1,1520 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#thumbnails-list img {
+  display: block;
+  object-fit: cover;
+  transform: translateZ(0);
+}
+.red-hat-text-font {
+  font-family: "Red Hat Text", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+.luxurious-script-regular {
+  font-family: "Luxurious Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gruppo-regular {
+  font-family: "Gruppo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.ballet-font {
+  font-family: "Ballet", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.michroma-regular {
+  font-family: "Michroma", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	user-select: none;
+    scroll-behavior: smooth;
+   
+	}
+/*---------------------------------------------------------------------------------STANDARD-----------------------------------------------------------------------*/	
+body{
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	transition: all 0.3s ease;
+    background: black;
+    overflow: hidden;
+		
+	}
+
+.photographer{
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+	left: 2vw;
+	bottom: 4vh;
+	background-color: transparent;
+	color: white;
+	background-image: url("camera.png");
+	background-size: contain;
+	background-position: center;
+	border-radius: 50%;
+	z-index: 1 !important;
+	pointer-events: auto;
+	cursor: grab;
+	
+}
+
+
+.photographer:hover {
+	box-shadow: 0 0 20px #8C1AF6;
+}
+.tooltip {
+  position: absolute;
+  bottom: -80%; /* a gomb fölé kerül */
+  margin-left: 2vw;
+  transform: translateX(-50%);
+  color: #8C1AF6;
+  text-shadow: 0 1px 0 white;
+  padding: 6px 10px;
+  font-size: 0.7rem;
+  font-family: "Michroma", sans-serif;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+
+
+/* Megjelenés hoverre */
+.photographer:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+.socialmedia-bar{
+	position: fixed;
+	top: 3vh;
+	right: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 10px;
+	z-index: 1;
+	}
+	.social-icon img {
+    width: 30px; /* Az ikonok szélessége a bar szélességének megfelelően */
+    margin-right: 25px; /* Függőleges térköz az ikonok között */
+    transition: transform 0.3s; /* Animáció a hover effektushoz */
+	z-index: 1;
+		
+}
+	
+	.social-icon img:hover {
+	box-shadow: 0 0 40px #A16FDE;
+	border-radius: 40px;
+}
+.social-icon img:hover {
+    transform: scale(1.1); /* Ikonok nagyítása hover esetén */
+}
+
+.socialmedia-bar-2{
+	position: absolute;
+	top: 8vh;
+	right: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 10px;
+	z-index: 1;
+	}
+
+
+.content2{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	margin: 0 auto;
+	
+	
+}
+
+.content2 p {
+    
+	margin: 10px;
+}
+
+
+.icon-style{
+  display: flex;
+  align-items: flex-start; /* vagy center ha középre akarod igazítani az ikont */
+  gap: 10px; /* távolság ikon és szöveg között */
+  margin: 10px 0;
+}
+
+.icon1 {
+  width: 40px;
+  height: 40px;
+  background-image: url("desktop-thin2.png");
+  background-size: cover;
+  flex-shrink: 0;
+}
+
+.icon2 {
+  width: 40px;
+  height: 40px;
+  background-image: url("magic-wand-thin.png");
+  background-size: cover;
+  flex-shrink: 0;
+}
+
+.icon3 {
+  width: 40px;
+  height: 40px;
+  background-image: url("aperture-thin.png");
+  background-size: cover;
+  flex-shrink: 0;
+}
+
+/*----------------------------------------------------PHOTO SECTION-----------------------------------*/
+
+#photographer-page {
+
+transition: opacity 0.5s ease;
+background: #180533;
+background: linear-gradient(286deg, rgba(24, 5, 51, 1) 56%, rgba(0, 0, 0, 1) 100%);
+width: 100vw;
+height: 100vh;
+z-index: 1;
+font-family: "Red Hat Text", sans-serif;
+}
+
+.top-bar{  
+  position: absolute;
+  width: 100vw;
+  height: 16vh;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(1px); /* homályosítja a mögöttes tartalmat */
+  -webkit-backdrop-filter: blur(1px); /* Safari kompatibilitás */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* vékony „üveg szegély” */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* finom árnyék */
+  padding: 20px 40px;
+  display: flex;           /* flex layout */
+  align-items: center;     /* vertikálisan középre */
+  justify-content: space-between; /* ha vannak jobb és bal oldali menük */
+    z-index: 1;
+    
+}
+
+.logo-photo {
+  position: fixed;
+  top: -3vh;
+  left: 1vw;
+  width:  170px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background-image: url("photologo3.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 99999;
+  opacity: 1;
+  border-radius: 50%;
+
+  
+}
+
+.logo-background {
+  background: linear-gradient(45deg, rgba(255,0,150,0.6), rgba(0,204,255,0.6));
+  padding: 10px;
+  border-radius: 6px;
+  backdrop-filter: blur(5px); /* kicsit elhomályosítja a mögöttes tartalmat */
+  z-index: -1;
+}
+.back-button {
+  z-index: 999;
+
+
+  width: 2rem;
+  height:2rem;
+  border: none;
+  background-image: url("codesandbox-logo-thin.png");
+  background-size: cover;
+  background-color: black;
+  cursor: pointer;
+  transition: background 0.3s;
+  position: fixed;
+  bottom: 4vh;
+  margin-left: 2vh;
+  box-shadow: 0 0 30px aquamarine;
+  border-radius: 50%;
+
+}
+
+.back-button:hover {
+  box-shadow: 0 0 10px aquamarine;
+  border-radius: 50%;
+	
+
+}
+
+.tooltip-back {
+  position: absolute;
+  left: 2vw;
+  transform: translateX(-50%);
+  color: aquamarine;
+  padding: 6px 10px;
+  font-size: 0.7rem;
+  font-family: "Michroma", sans-serif;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+bottom: -3vh;
+}
+
+/* Megjelenés hoverre */
+.back-button:hover .tooltip-back {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+
+/*
+  .diamond-slider {
+      width: 100%;
+      overflow: hidden;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+background: #828282;
+background: linear-gradient(286deg, rgba(130, 130, 130, 1) 0%, rgba(58, 58, 58, 1) 0%, rgba(0, 0, 0, 1) 22%, rgba(0, 0, 0, 1) 54%, rgba(0, 0, 0, 1) 71%, rgba(59, 59, 59, 1) 100%);
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 40px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 20px;
+    }
+
+    .slider-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .diamond {
+      width:40vw;
+      height: 55vh;
+      flex-shrink: 0;
+      clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+      background: rgba(0, 255, 200, 0.1);
+      box-shadow: 0 0 16px rgba(0, 255, 200, 0.2);
+    }
+
+    .diamond img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+*/
+
+.slider{
+
+    height: 100vh;
+    margin-top: -50px;
+    position: relative;
+	cursor: grab;
+}
+.slider .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider .list .item::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        to top, #000 10%, transparent
+    );
+}
+
+
+.slider .list .item .content-galery{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25%;
+    width: 500px;
+    max-width: 80%;
+	z-index: 9999;
+    aspect-ratio: 16/9;
+   
+	
+ 
+}
+
+.slider .list .item .content-galery p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+	
+}
+.slider .list .item .content-galery h2{
+    font-size: 80px;
+    margin: 0;
+	color: white;
+}
+
+.slider .list .item .content-galery p{
+    font-size: 20px;
+    margin: 0;
+	color: white;
+    
+}
+.slider .list .item.active{
+    opacity: 1;
+  
+}
+@keyframes showContent {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3){
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards;
+	
+}
+.slider .list .item.active h2{
+    animation-delay: 1s;
+	color: white;
+}
+.slider .list .item.active p:nth-child(3){
+    animation-duration: 1.3s;
+}
+.arrows{
+    position: absolute;
+    justify-content: center;
+	align-content: center;
+	align-items: center;
+	bottom: -3vh;
+    z-index: 99999;
+	display: flex;
+	gap: 50px;
+	left: 50%;
+    transform: translateX(-50%);
+}
+.arrows button{
+    background: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    transition: .5s;
+}
+
+#prev{
+	background-image: url("left-thin.png");
+	background-size: cover;
+}
+
+#next{
+	background-image: url("riht-thin.png");
+
+	background-size: cover;
+}
+.arrows button:hover{
+    background-color: rgba(142,142,142,0.56);
+    color: black;
+}
+.thumbnail{
+    position: absolute;
+    bottom: 2px;
+    z-index: 11;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 250px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow: auto;
+    justify-content: center;
+	
+}
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    filter: brightness(.5);
+    transition: .5s;
+    flex-shrink: 0;
+	
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.thumbnail .item.active{
+    filter: brightness(1.2);
+	
+
+}
+.thumbnail .item .content-galery{
+    position: absolute;
+    inset: auto 10px 10px 10px;
+	color: white;
+	margin: 0 auto;
+	text-align: center;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+	font-size: 1.1rem;
+}
+
+
+
+.photo-about-me{
+	position: right;
+	
+}
+
+
+.felipa-regular {
+  font-family: "Felipa", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.flagch{
+	display: inline-block;
+	position: absolute;
+	top: -15vh;
+	width: 350px;
+	height: 200px;
+	background-image: url("chflag.png");
+	background-size: cover;
+	background-position: center;
+	z-index: -1;
+    
+}
+
+.flagen{
+    display: inline-block;
+	position: absolute;
+	top: -16vh;
+	width: 250px;
+	height: 150px;
+	background-image: url("flagen.png");
+	background-size: cover;
+	background-position: center;
+	z-index: -1;
+}
+
+.flagnl{
+	display: inline-block;
+	position: absolute;
+	left: -30px;
+	top: -15vh;
+	width: 350px;
+	height: 200px;
+	background-image: url("nlflag.png");
+	background-size: cover;
+	background-position: center;
+	z-index: -1;
+}
+
+.flagbe{
+	display: inline-block;
+	position: absolute;
+	left: -30px;
+	top: -10vh;
+	width: 350px;
+	height: 200px;
+	background-image: url("flagbe.png");
+	background-size: cover;
+	background-position: center;
+	z-index: -1;
+}
+
+.flaghu{
+	display: inline-block;
+	position: absolute;
+	left: -30px;
+	top: -17vh;
+	width: 350px;
+	height: 200px;
+	background-image: url("flaghu.png");
+	background-size: cover;
+	background-position: center;
+	z-index: -1;
+}
+
+.flagslv{
+	display: inline-block;
+	position: absolute;
+	left: -30px;
+	top: -17vh;
+	width: 400px;
+	height: 200px;
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag-map_of_Slovakia.svg");
+	background-size: cover;
+	background-position: center;
+	z-index: -1;
+}
+
+
+
+.journey-start-button {
+ --color: #1DC2BF;
+ --color2: rgb(10, 25, 30);
+ padding: 1em 0.1em;
+ background-color: transparent;
+ border-radius: 6px;
+ border: .1px solid var(--color);
+ transition: .5s;
+ position: relative;
+ overflow: hidden;
+ cursor: pointer;
+ text-transform: uppercase;
+ color: var(--color);
+ top: -40vh;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 10px;
+}
+
+.journey-start-button::after, .journey-start-button::before {
+ content: '';
+ display: block;
+ height: 100%;
+ width: 100%;
+ transform: skew(90deg) translate(-50%, -50%);
+ position: absolute;
+ inset: 50%;
+ left: 25%;
+ z-index: -1;
+ transition: .5s ease-out;
+ background-color: var(--color);
+}
+
+.journey-start-button::before {
+ top: -50%;
+ left: -25%;
+ transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.journey-start-button:hover::before {
+ transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.journey-start-button:hover::after {
+ transform: skew(45deg) translate(-50%, -50%);
+}
+
+.journey-start-button:hover {
+ color: var(--color2);
+}
+
+.journey-start-button:active {
+ filter: brightness(.7);
+ transform: scale(.98);
+}
+
+.journey-start-button a{
+	font-size: 0.8rem;
+	text-align: center;
+	margin: 40px;
+	color: white;
+	text-decoration: none;
+
+
+}
+
+.journey-start-button a:hover{
+    color: black;
+    }
+.gallery-modal {
+  display: none; 
+  position: fixed;
+  z-index: 100000;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 68%, rgba(66, 61, 61, 1) 94%);
+  justify-content: center;
+  align-items: center;
+    
+    
+}
+
+.gallery-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw; /* növelheted, hogy ne vágja le a képeket */
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.gallery-content img {
+  max-height: 90vh;
+  width: 100%;
+  border-radius: 10px;
+  margin: 0 auto;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  transform-origin: center center;
+}
+
+
+.gallery-content button {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: rgba(11,199,143,1.00);
+  cursor: pointer;
+}
+
+.gallery-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-caption {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 80vw;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+.close-gallery {
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  font-size: 3rem;
+  color: rgba(11,199,143,1.00);
+  cursor: pointer;
+  z-index: 2;
+}
+.gallery-thumbnails {
+  position: absolute;
+  right: 0;
+  top: 2.5vh;
+  z-index: 1;
+  width: 20vw;     /* ne legyen túl nagy */
+  height: 90vh;    /* magasabb, hogy több thumb elférjen */
+  background: rgba(0,0,0,0.6); /* hogy kiemelkedjen a háttérből */
+  border-radius: 10px;
+  
+}
+
+.gallery-thumbnails ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.gallery-thumbnails li {
+  margin-bottom: 5px;
+}
+.gallery-thumbnails img {
+  display: block;   /* szünteti az inline space-t */
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: border 0.3s;
+  
+}
+
+/* --- Csúszás animáció --- */
+.slide-in-right {
+  animation: slideRight 0.6s forwards;
+}
+.slide-in-left {
+  animation: slideLeft 0.6s forwards;
+}
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(500px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-500px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+
+
+/*---------------------------------------------------------------------------MEDIA QUERYS---------------------------------------------------------------*/
+
+@media (max-width: 970px){
+	.socialmedia-bar{
+		top: 0 !important;
+	}
+	.social-icon{
+		width: 20px;
+		height: 20px;
+		padding: 20px;
+	}
+	}
+
+
+	@media (max-width: 1650px) {
+  .background {
+    background-size: 50%; 
+    background-position: center left;
+  }
+		
+			.slider .list .item .content-galery p{
+    font-size: 18px;
+	}	
+		.nav-border{
+			left: 50vw !important;
+			width: 50vw !important;
+		}
+		#cursor-circle{
+			display: none;
+		}
+}
+
+	@media (max-width: 1050px) {
+		.background {
+    background-size: 60% !important; 
+    background-position: center left;
+  }
+	     
+	
+		.title{
+			font-size:4rem!important;
+		}
+	
+}
+	
+			@media (max-width: 800px) {
+  .background {
+	  margin-top: 10vh;
+    background-size: 70% !important; 
+	background-position: center left -40% !important;
+   
+  }
+				
+			
+				
+				.logo2{
+					display: none;
+				}	
+				
+		.logo2{
+		display: none !important;
+			
+				}
+}
+@media (max-width: 600px) {
+	
+
+
+@media (max-width: 1350px) {
+	h1{
+		font-size: 20rem;
+	}
+	 
+	.title{
+		font-size:4.5rem;
+	}
+	
+
+	.logo2{
+		display: block;
+		max-width: 40vw !important;
+		max-height: 40vh !important;
+		margin-left: 5vw !important;
+	}
+	.background{
+		background-size: 50%;
+	}
+}
+	
+@media (max-width: 1550px) {
+	
+	.button{
+		margin-top: 69vh !important;
+		z-index: -1;
+		
+		}
+	}
+@media (max-width: 500px) {
+
+	
+	.logo3{
+		width:70px !important;
+		height: 70px !important;
+		
+	}
+
+	.cursor-circle{
+		display: none;
+	}
+	
+	.socialmedia-bar{
+		margin-top: -2vh !important;
+	}
+				
+  .background {
+    background-size: 95% !important; 
+	background-position: center right 100px;
+	margin-top: 100px !important;
+ 
+  }
+
+
+	.photographer{
+		width: 30px !important;
+		height: 30px !important;
+	}
+
+			
+}
+
+@media (max-width: 400px) {
+	.background{
+		background-size: 95% !important;
+	
+		margin-top: 50px !important;
+	}
+	}
+
+@media (max-width: 768px) {
+  .gradient-container {
+    height: 100%;
+    width: 100%;
+  }
+
+  .moving-gradient {
+    background-size: 500% 500%; /* Növeld a háttér méretét a kisebb képernyőkön */
+    opacity: 0.15; /* Kevésbé áttetsző mobilon, hogy jobban illeszkedjen */
+  }
+}
+
+@media screen and (max-width: 650px) {
+    .thumbnail{
+        justify-content: start;
+    }
+    .slider .list .item .content-galery h2{
+        font-size: 50px;
+		
+    }
+    
+    .content-galery{
+        margin-top: 10vh;
+    }
+   
+}
+
+
+@media (max-width: 1740px) {
+	.content-text{
+		font-size: 0.7rem !important;
+	}
+		}
+
+@media (max-width: 1450px) {
+	li:hover .content{
+		top: 45vh !important;
+	}
+	
+
+	.logo-photo{
+		margin-left: 5vw;
+		}
+		}
+
+@media (max-width: 1350px) {
+	li:hover .content{
+		width:  80vw !important;
+		position: fixed;
+		left:50% !important;
+		transform: translateX(-50%);
+		min-height:700px;
+		background-color: red;
+		margin-top: -34vh !important;
+        
+	
+	}
+	
+    .content-2{
+        width: 20vw !important;
+        
+        
+        
+    }
+	.grid-container{
+		display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+		position: fixed;
+		width: 80vw !important;
+		min-height: 50vw;
+		margin-top: -34vh !important;
+		z-index: 10 !important;
+	}
+		}
+@media (max-width: 970px){
+	.logo-photo{
+		left: 50%;
+		transform: translatex(-50%);
+		top: -5vh !important;
+	}
+		.back-button{
+		top: 2vh!important;
+		margin-left: 30px !important;
+	}
+}
+
+@media (max-height: 850px){
+	
+	.nav-border{
+		top: 15vh;
+	}
+}
+
+
+/*---------------------------------------------------------------------------------PHOTO MEDIA QUERYS----------------------------------------------------------------------*/
+
+@media (max-width: 1000px){
+	.flagch{
+		width: 220px!important;
+		height: 160px !important;
+	}
+	
+	.flagnl{
+		width: 200px!important;
+		height: 160px !important;
+	}
+	.flagbe{
+		width: 250px!important;
+		height: 160px !important;
+	}
+	.flaghu{
+		width: 230px!important;
+		height: 160px !important;
+		margin-top: 20px !important; 
+	}
+	
+	.flagslv{
+		width: 220px!important;
+		height: 100px !important;
+		margin-top:50px !important;
+	}
+	
+	
+	
+	.back-button{
+		width: 30px !important;
+		height: 30px !important;
+		margin-left: 20px !important;
+	}
+	
+	.tooltip{
+		margin-left: 45px !important;
+	}
+	
+	.slider .list .item .content-galery p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+		font-size: 10px;
+	
+}
+}
+
+@media (max-width: 600px){
+	.flagch{
+		width: 100px!important;
+		height: 60px !important;
+		margin-top: 10vh !important;
+	}
+	
+    	.flagen{
+		width: 100px!important;
+		height: 60px !important;
+		margin-top: 10vh !important;
+	}
+	.flagnl{
+		width: 100px!important;
+		height: 60px !important;
+		margin-top: 10vh !important;
+	}
+	.flagbe{
+		width: 100px!important;
+		height: 60px !important;
+		margin-top: 5vh !important;
+	}
+	.flaghu{
+		width: 100px!important;
+		height: 60px !important;
+		margin-top: 10vh !important;
+	
+	}
+	
+	.flagslv{
+		width: 100px!important;
+		height: 60px !important;
+		margin-top: 10vh !important;
+		
+	}
+	
+	.logo-photo{
+		width: 150px !important;
+		height:150px !important;
+        margin-left: 4vw !important;
+        margin-top: 2vh;
+		
+		
+	}
+	
+	.back-button{
+		right: 45%;
+        transform: translateY(-45%);
+		margin-top: 94vh !important;
+		
+	}
+	
+	.social-icon img {
+		width: 20px !important;
+	}
+
+.thumbnail .item{
+    width: 120px;
+    height: 150px;
+    filter: brightness(.5);
+    transition: .5s;
+    flex-shrink: 0;
+	
+}
+
+.thumbnail{
+	top: 80vh;
+}
+
+	.slider .list .item::after{
+		
+	 background-image: linear-gradient(
+        to top, #000 10%, transparent );
+   
+}
+	
+	.arrows{
+		position: absolute;
+		bottom: -5vh !important;
+	}
+    
+    .socialmedia-bar-2{
+        position: fixed;
+        display: flex;
+        left: 0;
+        margin-top: -1vh;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        
+	}
+    
+    .journey-start-button {
+        width: 150px;
+        height: 30px;
+    }
+    
+    .journey-start-button a{
+        
+        font-size: 10px;
+    }
+    
+    .a{
+        width: 50px;
+        height: 50px;
+        background: red;
+        
+    }
+    
+    #prev{
+        width: 30px;
+        height: 30px;
+    }
+    
+    #next{
+        width: 30px;
+        height: 30px;
+    }
+    }
+/*-------------------------------------------MOBIL UI----------------------*/
+
+.hamburger {
+  position: fixed;
+  right: 10px !important;
+  bottom: 46% !important;
+  display: none;
+  flex-direction: column;
+  width: 25px;
+  height: 25px;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 11;
+  margin: 10px;
+  display: none;
+  animation: bounce 2s infinite;
+  
+}
+
+.bar {
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+}
+
+/* Menü stílus */
+.menu {
+  display: none;
+  position: fixed;
+  top: 8vh;
+  right: 0;
+  width: 100vw;
+  min-height: 80vh;
+  background: #7039a3;
+  background: linear-gradient(0deg, rgba(112, 57, 163, 0.69) 0%, rgba(0, 0, 0, 1) 80%);
+  color: white;
+  z-index: 12;
+  flex-direction: column;  /* Vertikális elrendezés */
+  box-shadow: 0 0 50px #6834A8;
+  border-radius: 0 0 20px;
+  white-space: nowrap;
+  animation: slideInRight ease 1s;
+  padding: 20px;
+  z-index: 1;
+
+}
+
+
+.menu li {
+  padding: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+  right: 0;
+  box-shadow: 0 2px #7039A3;
+    
+	
+}
+.menu li:hover {
+	text-decoration: underline aqua;
+	}
+
+.close-btn {
+  position: absolute;
+  bottom: -10%;
+  right: 2px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: rgba(141,111,227,1.00);
+  cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+/* Reszponzív beállítások */
+@media (max-width: 600px) {
+  .hamburger {
+    display: flex;
+  }
+    
+    .background{
+        background-size: 95% !important;
+    }
+	
+	li:hover .content{
+		width: 98vw !important;
+		height: 95vh !important;
+		white-space: normal;
+		margin-top: -35vh!important;
+		overflow: scroll;
+		
+		
+	}
+	
+
+	.content2{
+		max-width: 70vw!important;
+		overflow: scroll;
+		white-space: normal;
+		
+	
+	}
+	
+	.description{
+		margin-top: -1vh!important;
+		
+	}
+	
+	
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0); /* Kezdeti és végpont: alaphelyzet */
+  }
+  50% {
+    transform: translateY(-20px); /* Középen: 20px-t feljebb ugrik */
+  }
+}
+@media (max-width: 600px) {
+
+	.experience-list{
+		display: flex !important;
+		flex-wrap: wrap!important;
+		width: 90vw!important;
+		overflow-y: auto; /* scroll-hoz auto a jobb */
+		white-space: normal;
+		margin: 0 auto;
+		gap: 60px;
+		padding: 30px;
+		border: solid 1px rgba(106,23,187,1.00);
+	
+	}
+	
+	.grid-container{
+		top: 45vh;
+	    grid-template-columns: repeat(1, 1fr);
+		overflow: scroll;
+	    min-width: 85% !important;
+		background-color: black;
+	}
+	
+	.slider .list .item .content-galery p{
+    font-size: 15px;
+    margin: 0;
+	color: white;
+}
+	
+	.tooltip-back{
+		margin-left: -25px;
+		font-size: 10px;
+	}
+	
+
+.grid-container-3{
+    height: 100vh;
+    display: grid; /* hiányzott */
+    grid-template-columns: repeat(1, 1fr);
+    overflow-y: auto; /* scroll-hoz auto a jobb */
+    width:100vw !important;
+    background-color: black;
+}
+	
+	.mobile-title{
+		font-family: "Red Hat Text" sans-serif;
+		margin: 30px auto;
+		text-align: center;
+		font-size: 1.3rem;
+		padding: 20px;
+		border-bottom: 1px solid #5E29AA;
+		
+		
+		
+	}
+
+.grid-3-cards img,
+.mini-site img {
+    width: 100%;  /* kitölti a szülő div-et */
+    height: 100%; /* kitölti a szülő div-et */
+    object-fit: cover; /* megtartja az arányokat */
+}
+}
+
+.margin{
+display: inline-flex; /* szép igazítás miatt */
+  align-items: center;
+  gap: 15px; /* kép és szöveg közé is */
+
+}
+
+
+
+.certificates-desktop {
+    position: relative;
+    margin-top: -52vh;              /* li alá nyíljon */
+    left: -33vw;
+    width: 90vw;            /* ⬅️ ITT tudod méretezni */
+    height: 40vh;           /* ⬅️ ITT is */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.grid-container-4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 oszlop a harmadik nagy képnek */
+    grid-auto-rows: auto;
+    gap: 10px;
+    width: 90vw;
+    height: 90vh;
+    overflow-y: scroll;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 99;
+}
+
+/* Alap kártyák (1-4 kép) */
+.grid-4-cards {
+    width: 100%;
+    height: auto;
+}
+
+/* 5. kép nagyobb, középre igazítva a harmadik oszlopban */
+.grid-4-cards:last-child {
+    grid-column: 3;            /* 3. oszlop */
+    grid-row: 1;                /* az első sorban kezdődik */
+    justify-self: center;       /* vízszintesen középre */
+    align-self: center;         /* függőlegesen középre */
+    height: 50%;                /* nagyobb magasság, a sorhoz képest */
+    max-height: 300px;          /* opcionális limit */
+    width: auto;                /* automatikusan arányosan */
+    border: solid 1px purple;
+}
+.grid-4-cards img {
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    border: solid 1px purple;
+}
+
+li:hover .content3 { 
+    opacity: 1; 
+
+}
+.eqp-title {
+    position: relative; /* 🔑 EZ HIÁNYZOTT */
+}
+
+/*-----------------------------------------------------------------galéria reszponziv-----------------------------------*/
+
+@media (max-width: 1550px) {
+
+	.gallery-thumbnails ul {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  position: absolute;
+  right: 0;
+        overflow: auto;
+
+}
+.gallery-thumbnails {
+  position: absolute;
+  right: 2vw;
+  top: 2.5vh;
+  z-index: 1;
+  width: 12vw;     /* ne legyen túl nagy */
+  height: 100vh;    /* magasabb, hogy több thumb elférjen */
+  overflow-y: auto; /* görgethető, ha több van */
+  background: rgba(0,0,0,0.6); /* hogy kiemelkedjen a háttérből */
+  border-radius: 10px;
+}
+    }
+
+@media (max-width: 1150px) {
+
+ 
+    .gallery-content {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  width: 90vw; /* növelheted, hogy ne vágja le a képeket */
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+    
+
+}
+
+
+@media (max-width: 1450px) {
+    
+        .gallery-thumbnails img {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        grid-template-columns: repeat(3, 2fr);
+        gap: 20px;
+        
+    }
+    
+    .gallery-thumbnails {
+  right: 0;
+  z-index: 1;
+  width: 100vw;     /* ne legyen túl nagy */
+  height: 10vh;    /* magasabb, hogy több thumb elférjen */
+  overflow: scroll; /* görgethető, ha több van */
+  background: rgba(0,0,0,0.6); /* hogy kiemelkedjen a háttérből */
+  border-radius: 10px;
+  display: grid;
+     
+}
+    
+      .gallery-thumbnails ul {
+    display: flex;           /* flexbox használata */
+    flex-direction: row;     /* elemek vízszintes sorban */
+    flex-wrap: nowrap;       /* ne törjön új sorba */
+    justify-content: center; /* középre igazítás vízszintesen */
+    align-items: flex-start; /* tetejére igazítás függőlegesen */
+    gap: 10px;  
+    height: 20vh;
+    overflow: auto;
+    position: absolute;
+  }
+
+ }
