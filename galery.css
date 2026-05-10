@@ -1,8 +1,12 @@
 @charset "utf-8";
 /* CSS Document */
 
-
-
+:root{
+    --vh: 1vh;
+}
+body{
+    min-height: calc(var(--vh) * 100);
+}
 .red-hat-text-font {
   font-family: "Red Hat Text", sans-serif;
   font-optical-sizing: auto;
@@ -44,7 +48,6 @@
 body{
 	position: fixed;
 	width: 100vw;
-    min-height: 100dvh;
 	transition: all 0.3s ease;
     background: black;
 	}
