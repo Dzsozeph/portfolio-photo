@@ -6,7 +6,6 @@
 }
 
 
-
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0); /* Kezdeti és végpont: alaphelyzet */
@@ -898,11 +897,21 @@ font-family: "Red Hat Text", sans-serif;
 	color: white;
 
  }  
+    
+    p1 {
+    text-shadow: 0 0 20px black;
+    background-color: rgba(0,0,0,0.50);
+    font-size: 0.8rem;
+    border-radius: 15px;
+    padding: 5px;
+    font-family: "Red Hat Text", sans-serif;
+}
+
 } 
 
 @media (max-height: 600px){
     .close-gallery{
-        position: absolute;
-        margin-left: 20vw !important;
+        position: relative;
+        left: -20vw !important;
     }
     } 
