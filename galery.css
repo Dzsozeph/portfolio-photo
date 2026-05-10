@@ -6,6 +6,7 @@
 }
 
 
+
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0); /* Kezdeti és végpont: alaphelyzet */
@@ -567,7 +568,7 @@ font-family: "Red Hat Text", sans-serif;
   background: rgba(0,0,0,0.6); /* hogy kiemelkedjen a háttérből */
   border-radius: 10px;
   display: grid;
-  
+  -webkit-overflow-scrolling: touch;
 }
 
 .gallery-thumbnails ul {
@@ -606,177 +607,9 @@ font-family: "Red Hat Text", sans-serif;
 
 
 /*---------------------------------------------------------------------------MEDIA QUERYS---------------------------------------------------------------*/
-
-@media (max-width: 970px){
-	.socialmedia-bar{
-		top: 0 !important;
-	}
-	.social-icon{
-		width: 20px;
-		height: 20px;
-		padding: 20px;
-	}
-	}
-
-
-	@media (max-width: 1650px) {
-  .background {
-    background-size: 50%; 
-    background-position: center left;
-  }
-		
-			.slider .list .item .content-galery p{
-    font-size: 18px;
-	}	
-		.nav-border{
-			left: 50vw !important;
-			width: 50vw !important;
-		}
-		#cursor-circle{
-			display: none;
-		}
-}
-
-	@media (max-width: 1050px) {
-		.background {
-    background-size: 60% !important; 
-    background-position: center left;
-  }
-	     
-	
-		.title{
-			font-size:4rem!important;
-		}
-	
-}
-	
-			@media (max-width: 800px) {
-  .background {
-	  margin-top: 10vh;
-    background-size: 70% !important; 
-	background-position: center left -40% !important;
-   
-  }
-				
-			
-				
-				.logo2{
-					display: none;
-				}	
-				
-		.logo2{
-		display: none !important;
-			
-				}
-}
-
-@media (max-width: 1350px) {
-	h1{
-		font-size: 20rem;
-	}
-	 
-	.title{
-		font-size:4.5rem;
-	}
-	
-
-	.logo2{
-		display: block;
-		max-width: 40vw !important;
-		max-height: 40vh !important;
-		margin-left: 5vw !important;
-	}
-	.background{
-		background-size: 50%;
-	}
-}
-	
-@media (max-width: 1550px) {
-	
-	.button{
-		margin-top: 69vh !important;
-		z-index: -1;
-		
-		}
-	}
-@media (max-width: 500px) {
-
-	
-	.logo3{
-		width:70px !important;
-		height: 70px !important;
-		
-	}
-
-	.cursor-circle{
-		display: none;
-	}
-	
-	.socialmedia-bar{
-		margin-top: -2vh !important;
-	}
-				
-  .background {
-    background-size: 95% !important; 
-	background-position: center right 100px;
-	margin-top: 100px !important;
- 
-  }
-
-
-	.photographer{
-		width: 30px !important;
-		height: 30px !important;
-	}
-
-			
-}
-
-@media (max-width: 400px) {
-	.background{
-		background-size: 95% !important;
-	
-		margin-top: 50px !important;
-	}
-	}
-
-@media (max-width: 768px) {
-  .gradient-container {
-    height: 100%;
-    width: 100%;
-  }
-
-  .moving-gradient {
-    background-size: 500% 500%; /* Növeld a háttér méretét a kisebb képernyőkön */
-    opacity: 0.15; /* Kevésbé áttetsző mobilon, hogy jobban illeszkedjen */
-  }
-}
-
-@media screen and (max-width: 650px) {
-    .thumbnail{
-        justify-content: start;
-    }
-    .slider .list .item .content-galery h2{
-        font-size: 50px;
-		
-    }
-    
-    .content-galery{
-        margin-top: 10vh;
-    }
-   
-}
-
-
-@media (max-width: 1740px) {
-	.content-text{
-		font-size: 0.7rem !important;
-	}
-		}
-
 @media (max-width: 1450px) {
 	
-	.gallery-thumbnails ul {
+  .gallery-thumbnails ul {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   position: absolute;
@@ -802,53 +635,65 @@ font-family: "Red Hat Text", sans-serif;
 		}
 		}
 
-@media (max-width: 1350px) {
-	li:hover .content{
-		width:  80vw !important;
-		position: fixed;
-		left:50% !important;
-		transform: translateX(-50%);
-		min-height:700px;
-		background-color: red;
-		margin-top: -34vh !important;
-        
-	
-	}
-	
-    .content-2{
-        width: 20vw !important;
-        
-        
-        
-    }
-	.grid-container{
-		display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-		position: fixed;
-		width: 80vw !important;
-		min-height: 50vw;
-		margin-top: -34vh !important;
-		z-index: 10 !important;
-	}
-		}
+@media (max-width: 1150px) {
+
+ 
+    .gallery-content {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  width: 90vw; /* növelheted, hogy ne vágja le a képeket */
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+    
+}
+
+
+
 @media (max-width: 970px){
-	.logo-photo{
+
+	.social-icon{
+		width: 20px;
+		height: 20px;
+		padding: 20px;
+	}
+    	.logo-photo{
 		left: 50%;
 		transform: translatex(-50%);
 		top: -5vh !important;
 	}
-		.back-button{
-		top: 2vh!important;
-		margin-left: 30px !important;
 	}
-}
 
-@media (max-height: 850px){
+
+
+
+@media (max-width: 400px) {
+	.background{
+		background-size: 95% !important;
 	
-	.nav-border{
-		top: 15vh;
+		margin-top: 50px !important;
 	}
+	}
+
+
+
+@media screen and (max-width: 650px) {
+    .thumbnail{
+        justify-content: start;
+    }
+    .slider .list .item .content-galery h2{
+        font-size: 50px;
+		
+    }
+    
+    .content-galery{
+        margin-top: 10vh;
+    }
+   
 }
 
 
@@ -879,23 +724,12 @@ font-family: "Red Hat Text", sans-serif;
 		height: 100px !important;
 		margin-top:50px !important;
 	}
-	
-	
-	
-	.back-button{
-		width: 30px !important;
-		height: 30px !important;
-		margin-left: 20px !important;
-	}
-	
-	.tooltip{
-		margin-left: 45px !important;
-	}
+
 	
 	.slider .list .item .content-galery p:nth-child(1){
     text-transform: uppercase;
     letter-spacing: 10px;
-		font-size: 10px;
+	font-size: 10px;
 	
 }
 }
@@ -1024,145 +858,47 @@ font-family: "Red Hat Text", sans-serif;
         width: 30px;
         height: 30px;
     }
+
     
-    
-    }
-
-/* Reszponzív beállítások */
-@media (max-width: 600px) {
-  .hamburger {
-    display: flex;
-  }
-    
-    .background{
-        background-size: 95% !important;
-    }
-	
-	li:hover .content{
-		width: 98vw !important;
-		height: 95vh !important;
-		white-space: normal;
-		margin-top: -35vh!important;
-		overflow: scroll;
-		
-		
-	}
-	
-
-	.content2{
-		max-width: 70vw!important;
-		overflow: scroll;
-		white-space: normal;
-		
-	
-	}
-	
-	.description{
-		margin-top: -1vh!important;
-		
-	}
-	
-	
-}
-
-
-@media (max-width: 600px) {
-
-	
-	
-	.slider .list .item .content-galery p{
-    font-size: 15px;
-    margin: 0;
-	color: white;
-}
-	
-	
-
-/*-----------------------------------------------------------------galéria reszponziv-----------------------------------*/
-
-
-
-
-@media (max-width: 1150px) {
-
- 
-    .gallery-content {
-  position: absolute;
-  left: 50%;
-  top: 60%;
-  transform: translate(-50%, -50%);
-  width: 90vw; /* növelheted, hogy ne vágja le a képeket */
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-    
-
-}
-
-
-@media (max-width: 600px) {
-    
- 
-    
-    .gallery-thumbnails {
-  right: 0;
-  z-index: 1;
-  width: 100vw;     /* ne legyen túl nagy */
-  height: 20vh;    /* magasabb, hogy több thumb elférjen */
-  overflow: scroll; /* görgethető, ha több van */
-  background: rgba(0,0,0,0.6); /* hogy kiemelkedjen a háttérből */
-  border-radius: 10px;
-  display: grid;
-     
+.gallery-thumbnails {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 140px;
+    overflow-x: auto;
+    background: rgba(0,0,0,0.6);
+    border-radius: 0;
+    padding: 10px;
 }
     
       .gallery-thumbnails ul {
-    display: flex;           /* flexbox használata */
-    flex-direction: row;     /* elemek vízszintes sorban */
-    flex-wrap: nowrap;       /* ne törjön új sorba */
-    justify-content: center; /* középre igazítás vízszintesen */
-    align-items: flex-start; /* tetejére igazítás függőlegesen */
-    gap: 10px;  
-    height: 20vh;
-    overflow: auto;
-    position: absolute;
-  }
- }
-    
-    @media (max-width: 900px) and (orientation: landscape) {
-
-  .gallery-content {
+    display: flex;
     flex-direction: row;
-    height: 100vh;
-    width: 100vw;
-    top: 50%;
-  }
-
-  .gallery-thumbnails {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 25vw;
-    height: 100vh;
-    overflow-y: auto;
-    display: block;
-  }
-
-  .gallery-thumbnails ul {
-    display: grid;
-    grid-template-columns: 1fr;
+    flex-wrap: nowrap;
     gap: 10px;
-  }
+    width: max-content;
+    height: 100%;
 
-  .gallery-thumbnails img {
-    width: 100%;
-    height: auto;
+    list-style: none;
   }
-
-  .gallery-content img {
-    max-height: 90vh;
-    width: auto;
-  }
+    
+    .gallery-thumbnails li {
+    flex: 0 0 auto;
 }
+
+.gallery-thumbnails img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+    
+    .slider .list .item .content-galery p{
+    font-size: 15px;
+    margin: 0;
+	color: white;
+
+ }  
+     } 
+
