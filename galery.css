@@ -1,12 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
 
-:root{
-    --vh: 1vh;
-}
-body{
-    min-height: calc(var(--vh) * 100);
-}
+
+
 .red-hat-text-font {
   font-family: "Red Hat Text", sans-serif;
   font-optical-sizing: auto;
@@ -48,6 +44,7 @@ body{
 body{
 	position: fixed;
 	width: 100vw;
+    min-height: 100dvh;
 	transition: all 0.3s ease;
     background: black;
 	}
@@ -652,8 +649,6 @@ font-family: "Red Hat Text", sans-serif;
 					display: none;
 				}	
 				
-                
-    
 		.logo2{
 		display: none !important;
 			
@@ -932,11 +927,11 @@ font-family: "Red Hat Text", sans-serif;
 		width: 20px !important;
 	}
     
-    .social-icon span img {
-		width: 26px !important;
+    .social-icon span img{
+        width: 26px !important;
         height: 26px !important;
-        margin-top: -0.1rem;
-	}
+        margin-top: -1px !important;
+    }
 
 .thumbnail .item{
     width: 120px;
@@ -1332,3 +1327,6 @@ li:hover .content3 {
   }
 
  }
+    
+    
+    
