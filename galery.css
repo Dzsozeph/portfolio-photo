@@ -866,6 +866,7 @@ font-family: "Red Hat Text", sans-serif;
         position: absolute;
         grid-template-columns: repeat(3, 2fr);
         gap: 20px;  
+      
     }
     
   .gallery-thumbnails {
