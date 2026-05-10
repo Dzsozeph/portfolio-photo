@@ -2,11 +2,7 @@
 /* CSS Document */
 
 
-#thumbnails-list img {
-  display: block;
-  object-fit: cover;
-  transform: translateZ(0);
-}
+
 .red-hat-text-font {
   font-family: "Red Hat Text", sans-serif;
   font-optical-sizing: auto;
@@ -51,67 +47,9 @@ body{
 	height: 100vh;
 	transition: all 0.3s ease;
     background: black;
-
-		
 	}
 
-.photographer{
-	position: fixed;
-	width: 40px;
-	height: 40px;
-	margin: 0 auto;
-	left: 2vw;
-	bottom: 4vh;
-	background-color: transparent;
-	color: white;
-	background-image: url("camera.png");
-	background-size: contain;
-	background-position: center;
-	border-radius: 50%;
-	z-index: 1 !important;
-	pointer-events: auto;
-	cursor: grab;
-	
-}
 
-
-.photographer:hover {
-	box-shadow: 0 0 20px #8C1AF6;
-}
-.tooltip {
-  position: absolute;
-  bottom: -80%; /* a gomb fölé kerül */
-  margin-left: 2vw;
-  transform: translateX(-50%);
-  color: #8C1AF6;
-  text-shadow: 0 1px 0 white;
-  padding: 6px 10px;
-  font-size: 0.7rem;
-  font-family: "Michroma", sans-serif;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-
-
-
-/* Megjelenés hoverre */
-.photographer:hover .tooltip {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-4px);
-}
-.socialmedia-bar{
-	position: fixed;
-	top: 3vh;
-	right: 0;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	padding: 10px;
-	z-index: 1;
-	}
 	.social-icon img {
     width: 30px; /* Az ikonok szélessége a bar szélességének megfelelően */
     margin-right: 25px; /* Függőleges térköz az ikonok között */
@@ -123,14 +61,13 @@ body{
 	.social-icon img:hover {
 	box-shadow: 0 0 40px #A16FDE;
 	border-radius: 40px;
-}
-.social-icon img:hover {
     transform: scale(1.1); /* Ikonok nagyítása hover esetén */
 }
 
+
 .socialmedia-bar-2{
 	position: absolute;
-	top: 8vh;
+	top: 3vh;
 	right: 0;
 	display: flex;
 	flex-direction: row;
@@ -139,54 +76,6 @@ body{
 	z-index: 1;
 	}
 
-
-.content2{
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	justify-content: center;
-	margin: 0 auto;
-	
-	
-}
-
-.content2 p {
-    
-	margin: 10px;
-}
-
-
-.icon-style{
-  display: flex;
-  align-items: flex-start; /* vagy center ha középre akarod igazítani az ikont */
-  gap: 10px; /* távolság ikon és szöveg között */
-  margin: 10px 0;
-}
-
-.icon1 {
-  width: 40px;
-  height: 40px;
-  background-image: url("desktop-thin2.png");
-  background-size: cover;
-  flex-shrink: 0;
-}
-
-.icon2 {
-  width: 40px;
-  height: 40px;
-  background-image: url("magic-wand-thin.png");
-  background-size: cover;
-  flex-shrink: 0;
-}
-
-.icon3 {
-  width: 40px;
-  height: 40px;
-  background-image: url("aperture-thin.png");
-  background-size: cover;
-  flex-shrink: 0;
-}
 
 /*----------------------------------------------------PHOTO SECTION-----------------------------------*/
 
@@ -204,8 +93,8 @@ font-family: "Red Hat Text", sans-serif;
 .top-bar{  
   position: absolute;
   width: 100vw;
-  height: 16vh;
-  background: rgba(0,0,0,0.7);
+  height: 10vh;
+  background: rgba(0,0,0,0.3);
   backdrop-filter: blur(1px); /* homályosítja a mögöttes tartalmat */
   -webkit-backdrop-filter: blur(1px); /* Safari kompatibilitás */
   border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* vékony „üveg szegély” */
@@ -214,7 +103,7 @@ font-family: "Red Hat Text", sans-serif;
   display: flex;           /* flex layout */
   align-items: center;     /* vertikálisan középre */
   justify-content: space-between; /* ha vannak jobb és bal oldali menük */
-    z-index: 1;
+  z-index: 1;
     
 }
 
@@ -242,95 +131,8 @@ font-family: "Red Hat Text", sans-serif;
   backdrop-filter: blur(5px); /* kicsit elhomályosítja a mögöttes tartalmat */
   z-index: -1;
 }
-.back-button {
-  z-index: 999;
 
 
-  width: 2rem;
-  height:2rem;
-  border: none;
-  background-image: url("codesandbox-logo-thin.png");
-  background-size: cover;
-  background-color: black;
-  cursor: pointer;
-  transition: background 0.3s;
-  position: fixed;
-  bottom: 4vh;
-  margin-left: 2vh;
-  box-shadow: 0 0 30px aquamarine;
-  border-radius: 50%;
-
-}
-
-.back-button:hover {
-  box-shadow: 0 0 10px aquamarine;
-  border-radius: 50%;
-	
-
-}
-
-.tooltip-back {
-  position: absolute;
-  left: 2vw;
-  transform: translateX(-50%);
-  color: aquamarine;
-  padding: 6px 10px;
-  font-size: 0.7rem;
-  font-family: "Michroma", sans-serif;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-bottom: -3vh;
-}
-
-/* Megjelenés hoverre */
-.back-button:hover .tooltip-back {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-4px);
-}
-
-
-/*
-  .diamond-slider {
-      width: 100%;
-      overflow: hidden;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-background: #828282;
-background: linear-gradient(286deg, rgba(130, 130, 130, 1) 0%, rgba(58, 58, 58, 1) 0%, rgba(0, 0, 0, 1) 22%, rgba(0, 0, 0, 1) 54%, rgba(0, 0, 0, 1) 71%, rgba(59, 59, 59, 1) 100%);
-    }
-
-    .slider-track {
-      display: flex;
-      gap: 40px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding: 20px;
-    }
-
-    .slider-track::-webkit-scrollbar {
-      display: none;
-    }
-
-    .diamond {
-      width:40vw;
-      height: 55vh;
-      flex-shrink: 0;
-      clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-      background: rgba(0, 255, 200, 0.1);
-      box-shadow: 0 0 16px rgba(0, 255, 200, 0.2);
-    }
-
-    .diamond img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-*/
 
 .slider{
 
@@ -745,6 +547,7 @@ background: linear-gradient(286deg, rgba(130, 130, 130, 1) 0%, rgba(58, 58, 58, 
   right: 0;
   top: 2.5vh;
   z-index: 1;
+      overflow-y: auto;
   width: 20vw;     /* ne legyen túl nagy */
   height: 90vh;    /* magasabb, hogy több thumb elférjen */
   background: rgba(0,0,0,0.6); /* hogy kiemelkedjen a háttérből */
@@ -1153,7 +956,7 @@ background: linear-gradient(286deg, rgba(130, 130, 130, 1) 0%, rgba(58, 58, 58, 
         position: fixed;
         display: flex;
         left: 0;
-        margin-top: -1vh;
+        margin-top: 5vh;
         text-align: center;
         justify-content: center;
         align-content: center;
