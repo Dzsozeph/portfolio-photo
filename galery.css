@@ -648,6 +648,7 @@ font-family: "Red Hat Text", sans-serif;
   display: flex;
   align-items: center;
   gap: 20px;
+        
 }
     
 }
@@ -859,29 +860,42 @@ font-family: "Red Hat Text", sans-serif;
         height: 30px;
     }
 
-    
 .gallery-thumbnails {
     position: absolute;
     top: 0;
     left: 0;
+    display: block !important;
     width: 100vw;
     height: 140px;
     overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
     background: rgba(0,0,0,0.6);
     border-radius: 0;
     padding: 10px;
 }
-    
-      .gallery-thumbnails ul {
-    display: flex;
+
+.gallery-thumbnails ul {
+    display: flex!important;
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 10px;
     width: max-content;
+    min-width: max-content;
     height: 100%;
-
     list-style: none;
-  }
+    overflow: scroll;
+}
+
+.gallery-thumbnails li {
+    flex: 0 0 auto;
+}
+
+.gallery-thumbnails::-webkit-scrollbar{
+    display:none;
+}
+}
     
     .gallery-thumbnails li {
     flex: 0 0 auto;
