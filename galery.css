@@ -860,54 +860,38 @@ font-family: "Red Hat Text", sans-serif;
         height: 30px;
     }
 
-.gallery-thumbnails {
+ .gallery-thumbnails img {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        grid-template-columns: repeat(3, 2fr);
+        gap: 20px;  
+    }
+    
+  .gallery-thumbnails {
+  right: 0;
+  z-index: 1;
+  width: 100vw;     /* ne legyen túl nagy */
+  height: 10vh;    /* magasabb, hogy több thumb elférjen */
+  overflow: scroll; /* görgethető, ha több van */
+  background: rgba(0,0,0,0.6); /* hogy kiemelkedjen a háttérből */
+  border-radius: 10px;
+  display: grid;
+     
+}
+    
+   .gallery-thumbnails ul {
+    display: flex;           /* flexbox használata */
+    flex-direction: row;     /* elemek vízszintes sorban */
+    flex-wrap: nowrap;       /* ne törjön új sorba */
+    justify-content: center; /* középre igazítás vízszintesen */
+    align-items: flex-start; /* tetejére igazítás függőlegesen */
+    gap: 10px;  
+    height: 20vh;
+    overflow: auto;
     position: absolute;
-    top: 0;
-    left: 0;
-    display: block !important;
-    width: 100vw;
-    height: 140px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;
-    background: rgba(0,0,0,0.6);
-    border-radius: 0;
-    padding: 10px;
-}
+  }
 
-.gallery-thumbnails ul {
-    display: flex!important;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 10px;
-    width: max-content;
-    min-width: max-content;
-    height: 100%;
-    list-style: none;
-    overflow: scroll;
-}
-
-.gallery-thumbnails li {
-    flex: 0 0 auto;
-}
-
-.gallery-thumbnails::-webkit-scrollbar{
-    display:none;
-}
-}
-    
-    .gallery-thumbnails li {
-    flex: 0 0 auto;
-}
-
-.gallery-thumbnails img {
-    width: 110px;
-    height: 110px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-    
     .slider .list .item .content-galery p{
     font-size: 15px;
     margin: 0;
@@ -915,4 +899,3 @@ font-family: "Red Hat Text", sans-serif;
 
  }  
      } 
-
