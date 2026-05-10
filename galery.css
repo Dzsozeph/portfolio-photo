@@ -649,6 +649,8 @@ font-family: "Red Hat Text", sans-serif;
 					display: none;
 				}	
 				
+                
+    
 		.logo2{
 		display: none !important;
 			
@@ -925,6 +927,12 @@ font-family: "Red Hat Text", sans-serif;
 	
 	.social-icon img {
 		width: 20px !important;
+	}
+    
+    .social-icon span img {
+		width: 26px !important;
+        height: 26px !important;
+        margin-top: -0.1rem;
 	}
 
 .thumbnail .item{
