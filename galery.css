@@ -272,11 +272,13 @@ transform: scale(0.9);
     font-size: x-large;
     color: #eee;
     transition: .5s;
+    
 }
 
 #prev{
 	background-image: url("left-thin.png");
 	background-size: cover;
+   
 }
 
 #next{
@@ -635,7 +637,7 @@ transform: scale(0.9);
   top: 2.5vh;
   z-index: 1;
   width: 12vw;     /* ne legyen túl nagy */
-  height: 100vh;    /* magasabb, hogy több thumb elférjen */
+  height: 90vh;    /* magasabb, hogy több thumb elférjen */
   overflow-y: auto; /* görgethető, ha több van */
   background: rgba(0,0,0,0.6); /* hogy kiemelkedjen a háttérből */
   border-radius: 10px;
@@ -643,23 +645,7 @@ transform: scale(0.9);
    
 }
 
-@media (max-width: 1150px) {
 
- 
-    .gallery-content {
-  position: absolute;
-  left: 50%;
-  top: 60%;
-  transform: translate(-50%, -50%);
-  width: 90vw; /* növelheted, hogy ne vágja le a képeket */
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-        
-}
-    
-}
 
 
 
@@ -958,5 +944,22 @@ transform: scale(0.9);
     .active{
         transform: scale(0.8);
     }
-
+    
+    h2 {
+        font-size: 0.2rem;
+        
+    }
     } 
+
+#gallery-prev{
+    position: absolute;
+    top: 77vh;
+}
+#gallery-next{
+    position: absolute;
+    top: 77vh;
+    right: 20vw;
+}
+
+
+ 
