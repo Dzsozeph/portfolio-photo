@@ -200,6 +200,17 @@ font-family: "Red Hat Text", sans-serif;
  
 }
 
+    p1 {
+    font-size: 0.9rem;
+    text-shadow: 0 0 20px black;
+    background-color: rgba(0,0,0,0.50);
+    border-radius: 15px;
+    padding: 5px;
+    font-family: "Red Hat Text", sans-serif;
+}
+
+
+
 .slider .list .item .content-galery p:nth-child(1){
     text-transform: uppercase;
     letter-spacing: 10px;
@@ -628,11 +639,7 @@ font-family: "Red Hat Text", sans-serif;
   border-radius: 10px;
 }
    
-
-	.logo-photo{
-		margin-left: 5vw;
-		}
-		}
+}
 
 @media (max-width: 1150px) {
 
@@ -656,12 +663,8 @@ font-family: "Red Hat Text", sans-serif;
 
 @media (max-width: 970px){
 
-	.social-icon{
-		width: 20px;
-		height: 20px;
-		padding: 20px;
-	}
     	.logo-photo{
+        position: absolute;
 		left: 50%;
 		transform: translatex(-50%);
 		top: -5vh !important;
@@ -790,6 +793,12 @@ font-family: "Red Hat Text", sans-serif;
 		width: 20px !important;
 	}
     
+    .socialmedia-bar-2{
+        position: absolute;
+        margin-left: 10%;
+        margin-top: 7vh!important;
+    }
+    
     .social-icon span img{
         width: 26px !important;
         height: 26px !important;
@@ -845,7 +854,7 @@ font-family: "Red Hat Text", sans-serif;
     .a{
         width: 50px;
         height: 50px;
-        background: red;
+    
         
     }
     
@@ -899,7 +908,6 @@ font-family: "Red Hat Text", sans-serif;
  }  
     
     p1 {
-    text-shadow: 0 0 20px black;
     background-color: rgba(0,0,0,0.50);
     font-size: 0.8rem;
     border-radius: 15px;
@@ -914,5 +922,35 @@ font-family: "Red Hat Text", sans-serif;
         position: absolute;
         top: 2vh !important;
         left: 2vw !important;
+    }
+    
+    .thumbnail .item{
+    width: 100px;
+    height: 100px;
+
+	
+}
+
+.thumbnail{
+	top: 85vh;
+}
+    
+    .arrows{
+        display:none;
+    }
+    .logo-photo{
+    left: 7vw;   
+    margin-top: -1vh;
+    width: 100px;
+    height: 100px;
+        
+    }
+    
+    .socialmedia-bar-2{
+        margin-top:-5vh;
+    }
+    
+    .social-icon{
+       transform: scale(0.8);
     }
     } 
