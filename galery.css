@@ -209,7 +209,9 @@ font-family: "Red Hat Text", sans-serif;
     font-family: "Red Hat Text", sans-serif;
 }
 
-
+.thumbnail .item.active{
+transform: scale(0.9);
+}
 
 .slider .list .item .content-galery p:nth-child(1){
     text-transform: uppercase;
@@ -953,9 +955,8 @@ font-family: "Red Hat Text", sans-serif;
     .social-icon{
        transform: scale(0.8);
     }
-    .item{
+    .active{
         transform: scale(0.8);
-        left: 50%;
     }
 
     } 
