@@ -953,4 +953,9 @@ font-family: "Red Hat Text", sans-serif;
     .social-icon{
        transform: scale(0.8);
     }
+    .item{
+        transform: scale(0.8);
+        left: 50%;
+    }
+
     } 
