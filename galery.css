@@ -911,7 +911,8 @@ font-family: "Red Hat Text", sans-serif;
 
 @media (max-height: 600px){
     .close-gallery{
-        position: relative;
-        left: -20vw !important;
+        position: absolute;
+        top: 2vh !important;
+        left: 2vw !important;
     }
     } 
