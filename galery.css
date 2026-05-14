@@ -433,7 +433,7 @@ transform: scale(0.9);
 .journey-start-button {
  --color: #1DC2BF;
  --color2: rgb(10, 25, 30);
- padding: 1em 0.1em;
+ padding: 0.5em 0.1em;
  background-color: transparent;
  border-radius: 6px;
  border: .1px solid var(--color);
@@ -601,6 +601,18 @@ transform: scale(0.9);
   transition: border 0.3s;
   
 }
+
+
+#gallery-prev{
+    position: absolute;
+    top: 77vh;
+}
+#gallery-next{
+    position: absolute;
+    top: 77vh;
+    right: 21vw;
+}
+
 
 /* --- Csúszás animáció --- */
 .slide-in-right {
@@ -903,8 +915,27 @@ transform: scale(0.9);
     font-family: "Red Hat Text", sans-serif;
 }
 
-} 
+    .close-gallery {
+  position: absolute;
+  left: 50%;
+  transform: translateY(-50%);
+  top: 94.5vh;
 
+} 
+    
+    .gallery-caption {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 0.7rem;
+  text-align: center;
+  max-width: 80vw;
+  font-family: "Red Hat Text", sans-serif;
+}
+    #gallery-next{
+        right: 1px!important;
+    }
+    
+    }
 @media (max-height: 600px){
     .close-gallery{
         position: absolute;
@@ -919,6 +950,14 @@ transform: scale(0.9);
 	
 }
 
+        .gallery-caption {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 0.7rem;
+  text-align: center;
+  max-width: 80vw;
+  font-family: "Red Hat Text", sans-serif;
+}
 .thumbnail{
 	top: 85vh;
 }
@@ -949,17 +988,54 @@ transform: scale(0.9);
         font-size: 0.2rem;
         
     }
+    .journey-start-button {
+    margin-top: 50px;
+    width: 50px;
+    height: 20px;
+    justify-content: center;
+     text-align: center;
+    
     } 
-
-#gallery-prev{
-    position: absolute;
-    top: 77vh;
+    .journey-start-button a{
+        position: absolute;
+        font-size: 0.4rem;
+        text-align: center;
+        margin: 0 auto;
 }
-#gallery-next{
-    position: absolute;
-    top: 77vh;
-    right: 20vw;
+    }
+
+@media (max-width: 1340px){
+    .gallery-thumbnails img {
+        width: 5vw;
+        height: 6vh;
+        display: block;
+     
+  
+      
+    }
+    
+  .gallery-thumbnails {
+  right: 0;
+  z-index: 1;
+  width: 100vw;     /* ne legyen túl nagy */
+  height: 5vh;    /* magasabb, hogy több thumb elférjen */
+  overflow: scroll; /* görgethető, ha több van */
+  background: rgba(0,0,0,0.6); /* hogy kiemelkedjen a háttérből */
+  border-radius: 10px;
+  display: grid;
+     
 }
-
-
- 
+    
+   .gallery-thumbnails ul {
+    display: flex;           /* flexbox használata */
+    flex-direction: row;     /* elemek vízszintes sorban */
+    flex-wrap: nowrap;       /* ne törjön új sorba */
+    justify-content: center; /* középre igazítás vízszintesen */
+    align-items: flex-start; /* tetejére igazítás függőlegesen */
+    gap: 10px;
+    width: 100vw;
+    height: 20vh;
+    overflow: auto;
+    position: absolute;
+  }
+      }
