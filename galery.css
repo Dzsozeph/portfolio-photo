@@ -605,11 +605,11 @@ transform: scale(0.9);
 
 #gallery-prev{
     position: absolute;
-    top: 77vh;
+    top: 75vh;
 }
 #gallery-next{
     position: absolute;
-    top: 77vh;
+    top: 75vh;
     right: 21vw;
 }
 
@@ -919,7 +919,7 @@ transform: scale(0.9);
   position: absolute;
   left: 50%;
   transform: translateY(-50%);
-  top: 94.5vh;
+  top: 93vh;
 
 } 
     
