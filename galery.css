@@ -934,11 +934,20 @@ transform: scale(0.9);
   max-width: 80vw;
   font-family: "Red Hat Text", sans-serif;
 }
+    #gallery-prev{
+        margin-left: 20px!important;
+    }
     #gallery-next{
-        right: 1px!important;
+        margin-right: 20px!important;
     }
     
+    .gallery-content {
+        width: 100vw;
     }
+
+ }
+
+
 @media (max-height: 600px){
     .close-gallery{
         position: absolute;
@@ -1041,7 +1050,5 @@ transform: scale(0.9);
     overflow: auto;
     position: absolute;
   }
-    .gallery-content {
-        width: 100vw;
-      }
+
     }
