@@ -64,7 +64,7 @@
 body{
 	position: fixed;
 	width: 100vw;
-    min-height: calc(var(--vh) * 100);
+    min-height: 100vh;
 	transition: all 0.3s ease;
     background: black;
 	}
@@ -739,6 +739,10 @@ transform: scale(0.9);
 }
 
 @media (max-width: 600px){
+    
+    body{
+        min-height: 100dvh!important;
+    }
 	.flagch{
 		width: 100px!important;
 		height: 60px !important;
