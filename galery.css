@@ -1,10 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-:root{
-    --vh: 1vh;
-}
-
 
 @keyframes bounce {
   0%, 100% {
@@ -522,7 +518,7 @@ transform: scale(0.9);
   height: 70vh;
   display: flex;
   align-items: center;
-  gap: 20px;
+
 
 }
 
@@ -947,6 +943,7 @@ transform: scale(0.9);
     
     .gallery-content {
         width: 100vw;
+  
     }
 
  }
