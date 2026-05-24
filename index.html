@@ -194,14 +194,18 @@
   </div>
 	
   <div class="gallery-content">
+       
     <button id="gallery-prev">‹</button>
     <div class="gallery-inner">
       <img id="gallery-image" src="" alt="Gallery Image">
       <div id="gallery-caption" class="gallery-caption"></div>
     </div>
     <button id="gallery-next">›</button>
+
   </div>
+           <div id="flip-image"></div>
 </div>
+    
     <script>
         
         function setVH() {
@@ -747,7 +751,21 @@ journeyBtn.addEventListener('click', () => {
 });
 
 // --- Bezárás ---
-closeGallery.addEventListener('click', () => {
+// csak a háttér kattintás zárja be
+galleryModal.addEventListener('click', (e) => {
+  if (e.target === galleryModal) {
+    galleryModal.style.display = 'none';
+  }
+});
+
+// a galéria tartalomra kattintás NE zárja be
+document.querySelector('.gallery-content').addEventListener('click', (e) => {
+  e.stopPropagation();
+});
+
+// X gomb működjön külön
+closeGallery.addEventListener('click', (e) => {
+  e.stopPropagation();
   galleryModal.style.display = 'none';
   stopAutoSlide();
 });
