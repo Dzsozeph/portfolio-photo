@@ -882,6 +882,41 @@ hamburgerIcon.addEventListener('click', () => {
     class="gallery-img"
   >
 `);
+        
+        // --- Mobil swipe galériához ---
+let touchStartX = 0;
+let touchEndX = 0;
+
+const swipeArea = document.querySelector('.gallery-content');
+
+swipeArea.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+swipeArea.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+    const swipeDistance = touchEndX - touchStartX;
+
+    // minimum húzási távolság
+    if (Math.abs(swipeDistance) < 50) return;
+
+    // balra húzás = következő kép
+    if (swipeDistance < 0) {
+        currentIndex = (currentIndex + 1) % currentGallery.length;
+        updateGallery(1);
+    }
+
+    // jobbra húzás = előző kép
+    else {
+        currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+        updateGallery(-1);
+    }
+}
+        
 
     </script>
 </body>

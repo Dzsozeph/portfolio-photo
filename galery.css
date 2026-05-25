@@ -518,6 +518,7 @@ transform: scale(0.9);
   height: 70vh;
   display: flex;
   align-items: center;
+    touch-action: pan-y;
 
 
 }
@@ -966,13 +967,26 @@ transform: scale(0.9);
 
 @media (max-height: 600px){
     
-
+.thumbnail{
+	top: 85vh;
+}
+    
     .thumbnail .item{
     width: 100px;
-    height: 100px;
+    height: 130px;
 
-	
 }
+
+    .gallery-content{
+       margin: 0 auto;
+       display: contents;
+       top: 50%;
+       width: 100vw;
+      
+       
+    }
+    
+
 
         .gallery-caption {
   margin-top: 10px;
@@ -982,10 +996,7 @@ transform: scale(0.9);
   max-width: 80vw;
   font-family: "Red Hat Text", sans-serif;
 }
-.thumbnail{
-	top: 85vh;
-}
-    
+
     .arrows{
         display:none;
     }
@@ -1028,12 +1039,22 @@ transform: scale(0.9);
 }
     
     #gallery-prev{
-       margin-top: 20vh; 
+       margin-top: 10vh; 
        padding: 20px;
     }
     #gallery-next{
-       margin-top: 20vh;
+        margin-top: 10vh;
+        right: 0;
         padding: 20px;
+   
+        
+        
+        
+    }
+    
+    #gallery-image{
+        object-fit: cover;
+        
         
     }
     }
@@ -1052,8 +1073,7 @@ transform: scale(0.9);
   right: 0;
   z-index: 1;
   width: 100vw;     /* ne legyen túl nagy */
-  height: 5vh;    /* magasabb, hogy több thumb elférjen */
-  overflow: scroll; /* görgethető, ha több van */
+  height: 10vh;    /* magasabb, hogy több thumb elférjen */
   background: rgba(0,0,0,0.6); /* hogy kiemelkedjen a háttérből */
   border-radius: 10px;
   display: grid;
